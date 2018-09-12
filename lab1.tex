@@ -1,0 +1,77 @@
+\documentclass[leqno]{article}
+\usepackage{amsmath}
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\bfseries\itshape}{\thesection}{0.5em}{}
+\begin{document}
+\begin{flushright}
+Matthew Sicotte\\
+Physics 326 Section 01\\
+September 11, 2018
+\end{flushright}
+\section*{Introduction}
+When we perform most scientific experiments, we have to perform multiple measurements of a certain quantity to obtain a more accurate value.  In this case, we need to be able to calculate the error of the average of these measurements so that we can treat it as a single, more accurate measurement.  In this case, we are interested in calculating the standard error of our measurement, which is equal to the standard deviation divided by the square root of the number of trials performed, as shown in Eq.(1).  A derivation of this formula is in the section "Derivation of the Standard Error Formula."\\
+
+\begin{equation}
+	\sigma_{\bar{x}}=\frac{\sigma}{\sqrt{n}}
+\end{equation}\\
+
+
+Additionally, in most scientific experiments, we need to determine how the errors for each measurement influence the final result.  To do this, it is necessary to use the propagation of error formula.  Suppose that \{$x_1, x_2, \ldots, x_n$\} is a set of $n$ measurements, with errors of \{$\delta x_1, \delta x_2, \ldots, \delta x_n$\}, and we want to find the error in the value of a quantity $q$, which is a function of $x_1, x_2, \ldots, x_n$.  Then, the error contributed to $q$ from \{$x_1, x_2, \ldots, x_n$\} is found exactly by Eq.(2) and quickly estimated by Eq.(3).  A derivation of Eq.(2) is found in the section "Derivation of the Propagation of Error Formula".
+
+\begin{equation}
+	\delta q=\sqrt{(\frac{\partial q}{\partial x_1}\delta x_1)^2+(\frac{\partial q}{\partial x_2}\delta x_2)^2+\ldots+(\frac{\partial q}{\partial x_n}\delta x_n)^2}
+\end{equation}
+
+\begin{equation}
+	\delta q \leq |\frac{\partial q}{\partial x_1}\delta x_1|+|\frac{\partial q}{\partial x_2}\delta x_2|+\ldots + |\frac{\partial q}{\partial x_n}\delta x_n|
+\end{equation}
+
+%For a torsion pendulum, the torque is $\tau=-k\theta$, where k is the torque constant of the wire.  Then, by Newton's Second Law
+%\begin{equation}
+%	-k\theta=I\frac{d^2\theta}{dt^2}
+%\end{equation}
+%where I is the moment of inertia.  This is the equation of a simple harmonic oscillator with an angular frequency of
+%	\begin{equation}
+%		\omega=\sqrt{\frac{k}{I}}	\qquad	T=2\pi\sqrt{\frac{I}{k}}
+%\end{equation}
+%The moment of inertia of a rectangular bar about the vertical axis through its center of mass is:
+%\begin{equation}
+%	I=\frac{m}{12}(a^2+b^2)
+%\end{equation}
+%where $m$ is the measure mass, $a$ is the measured length and $b$ is the measured width.\\            
+%For a wire of diameter $d$ and length $L$, the torsional constant is
+%\begin{equation}
+%	k=\frac{\pi d^2 M}{32L}
+%\end{equation}
+%where $M$ is the modulus of rigidity.  By substituting k from Eq.(7) into Eq.(5) and solving for $M$
+As derived in the handout for Lab 1, the equation for the modulus of rigidity, M, is
+\begin{equation}
+	M=\frac{32\pi}{3}\frac{Lm(a^2+b^2)}{d^4T^2}
+\end{equation}
+where L is the length of the wire, m is the mass of the bar, a is the length of the bar, b is the width of the bar, d is the diameter of the wire, and T is the period of the torsion pendulum, all of which are measured.
+
+In this lab, we will be determining the rigidity of a steel wire using a torsion pendulum and calculating the errors in our measurements as well as the error in our final calculated value.  The main objective of this lab is to learn about errors in measurement and how they relate to the propagation of error in our calculations.
+
+
+\section*{Derivation of the Standard Error Formula}
+
+Suppose that $x$ is a random variable with a variance of $\sigma^2$ and \{$x_1, x_2, \ldots, x_n$\} are $n$ random values of $x$.  Then, the total $T=x_1+x_2+\ldots+x_n$ has a variance of $\sigma_x^2+\sigma_x^2+\ldots+\sigma_x^2=n\sigma_x^2$.  By substituting \{$\frac{x_1}{n}, \frac{x_2}{n}, \ldots, \frac{x_n}{n}$\} into the formula for variance, we get
+\begin{equation}
+	\sigma_{\bar{x}}^2=\frac{1}{n^2}n\sigma^2
+\end{equation}
+Thus, by simplifying and taking the square root of both sides, we get
+\begin{equation}
+	\sigma_{\bar{x}}=\frac{\sigma}{\sqrt{n}}
+\end{equation}
+which is the formula for the standard error.
+
+\section*{Derivation of the Propagation of Error Formula}
+Suppose that \{$x_1, x_2, \ldots, x_n$\} are $n$ independent measured variables with errors of \{$\delta x_1, \delta x_2, \ldots, \delta x_n$\}.  Then, by the Chain rule for partial derivatives, the standard error of the function $p$ is defined as
+\begin{equation*}
+	\delta p = (\frac{\partial p}{\partial x_i}\delta x_i)
+\end{equation*}
+By the formula for the standard deviation of the sum of variables, the standard error of the function $p$ is
+\begin{equation*}
+	\delta q=\sqrt{(\frac{\partial q}{\partial x_1}\delta x_1)^2+(\frac{\partial q}{\partial x_2}\delta x_2)^2+\ldots+(\frac{\partial q}{\partial x_n}\delta x_n)^2}
+\end{equation*}
+\end{document}
