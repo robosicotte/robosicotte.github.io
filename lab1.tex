@@ -9,14 +9,16 @@ Physics 326 Section 01\\
 September 11, 2018
 \end{flushright}
 \section*{Introduction}
-When we perform most scientific experiments, we have to perform multiple measurements of a certain quantity to obtain a more accurate value.  In this case, we need to be able to calculate the error of the average of these measurements so that we can treat it as a single, more accurate measurement.  In this case, we are interested in calculating the standard error of our measurement, which is equal to the standard deviation divided by the square root of the number of trials performed, as shown in Eq.(1).  A derivation of this formula is in the section "Derivation of the Standard Error Formula."\\
-
+When we perform most scientific experiments, we have to perform multiple measurements of a certain quantity to obtain a more accurate value.  In this case, we need to be able to calculate the error of the average of these measurements so that we can treat it as a single, more accurate measurement.  In this case, we are interested in calculating the standard error of our measurement, which is equal to the standard deviation (found using Eq.(1)) divided by the square root of the number of trials performed, as shown in Eq.(2).  %A derivation of this formula is in the section "Derivation of the Standard Error Formula."\\
+\begin{equation}
+	\sigma_x=\sqrt{\frac{1}{N-1}\sum_{i=1}^{N} (x_i-\bar{x})^2}
+\end{equation}
 \begin{equation}
 	\sigma_{\bar{x}}=\frac{\sigma}{\sqrt{n}}
 \end{equation}\\
 
-
-Additionally, in most scientific experiments, we need to determine how the errors for each measurement influence the final result.  To do this, it is necessary to use the propagation of error formula.  Suppose that \{$x_1, x_2, \ldots, x_n$\} is a set of $n$ measurements, with errors of \{$\delta x_1, \delta x_2, \ldots, \delta x_n$\}, and we want to find the error in the value of a quantity $q$, which is a function of $x_1, x_2, \ldots, x_n$.  Then, the error contributed to $q$ from \{$x_1, x_2, \ldots, x_n$\} is found exactly by Eq.(2) and quickly estimated by Eq.(3).  A derivation of Eq.(2) is found in the section "Derivation of the Propagation of Error Formula".
+Additionally, in most scientific experiments, we need to determine how the errors for each measurement influence the final result.  To do this, it is necessary to use the propagation of error formula.  Suppose that \{$x_1, x_2, \ldots, x_n$\} is a set of $n$ measurements, with errors of \{$\delta x_1, \delta x_2, \ldots, \delta x_n$\}, and we want to find the error in the value of a quantity $q$, which is a function of $x_1, x_2, \ldots, x_n$.  Then, the error contributed to $q$ from \{$x_1, x_2, \ldots, x_n$\} is found exactly by Eq.(3) and quickly estimated by Eq.(4).  The error contributed by a single variable $a$ is found using Eq.(5). 
+%A derivation of Eq.(2) is found in the section "Derivation of the Propagation of Error Formula".
 
 \begin{equation}
 	\delta q=\sqrt{(\frac{\partial q}{\partial x_1}\delta x_1)^2+(\frac{\partial q}{\partial x_2}\delta x_2)^2+\ldots+(\frac{\partial q}{\partial x_n}\delta x_n)^2}
@@ -25,53 +27,23 @@ Additionally, in most scientific experiments, we need to determine how the error
 \begin{equation}
 	\delta q \leq |\frac{\partial q}{\partial x_1}\delta x_1|+|\frac{\partial q}{\partial x_2}\delta x_2|+\ldots + |\frac{\partial q}{\partial x_n}\delta x_n|
 \end{equation}
-
-%For a torsion pendulum, the torque is $\tau=-k\theta$, where k is the torque constant of the wire.  Then, by Newton's Second Law
-%\begin{equation}
-%	-k\theta=I\frac{d^2\theta}{dt^2}
-%\end{equation}
-%where I is the moment of inertia.  This is the equation of a simple harmonic oscillator with an angular frequency of
-%	\begin{equation}
-%		\omega=\sqrt{\frac{k}{I}}	\qquad	T=2\pi\sqrt{\frac{I}{k}}
-%\end{equation}
-%The moment of inertia of a rectangular bar about the vertical axis through its center of mass is:
-%\begin{equation}
-%	I=\frac{m}{12}(a^2+b^2)
-%\end{equation}
-%where $m$ is the measure mass, $a$ is the measured length and $b$ is the measured width.\\            
-%For a wire of diameter $d$ and length $L$, the torsional constant is
-%\begin{equation}
-%	k=\frac{\pi d^2 M}{32L}
-%\end{equation}
-%where $M$ is the modulus of rigidity.  By substituting k from Eq.(7) into Eq.(5) and solving for $M$
-As derived in the handout for Lab 1, the equation for the modulus of rigidity, M, is
+\begin{equation}
+	\delta q_a=|\frac{\partial q}{\partial a}\delta a|
+\end{equation}
+In this lab, we will be using a torsion pendulum to determine the modulus of rigidity for a steel wire.
+In this case,the equation for the modulus of rigidity, M, is given by Eq.(6):
 \begin{equation}
 	M=\frac{32\pi}{3}\frac{Lm(a^2+b^2)}{d^4T^2}
 \end{equation}
-where L is the length of the wire, m is the mass of the bar, a is the length of the bar, b is the width of the bar, d is the diameter of the wire, and T is the period of the torsion pendulum, all of which are measured.
+where L is the length of the wire, m is the mass of the bar, a is the length of the bar, b is the width of the bar, d is the diameter of the wire, and T is the period of the torsion pendulum, all of which are measured.\\
+The main objective of this lab is to learn about errors in measurement and how they relate to the propagation of error in our calculations.
+\section*{Experimental Method}
+This lab consisted of the following apparatus.  A long, thin steel wire was hung from a standard lab stand.  The bottom of the wire was threaded through a small hole in the central vertical axis of a brass bar.  A screw was threaded through a larger hole parallel to the width of the bar and was used to hold the bottom end of the wire in place.\\
 
-In this lab, we will be determining the rigidity of a steel wire using a torsion pendulum and calculating the errors in our measurements as well as the error in our final calculated value.  The main objective of this lab is to learn about errors in measurement and how they relate to the propagation of error in our calculations.
+For our measurements, we used a micrometer to measure the width of the block and the diameter of the wire.  To measure the length of the wire, we used a meter ruler with markings every 1 mm.  Digital calipers were used to measure the length of the bar.  Additionally, to measure the mass of the bar, a standard scale was used.  Finally, to measure the period of the torsion pendulum, we used a stopwatch on a cell phone.\\
 
+For the first part of this lab, we determined the least count of each instrument to get a rough idea of the error of each of our measurements.  As it was very hard to get a very precise measurement of the width of the bar, we took three different measurements, determined the average and the standard deviation, and then estimated the propagation of error using Eq.(4) and Eq.(6).  By analyzing this result, we found that the largest errors were from our measurements of the diameter of the wire and the period of the torsion pendulum.\\
 
-\section*{Derivation of the Standard Error Formula}
-
-Suppose that $x$ is a random variable with a variance of $\sigma^2$ and \{$x_1, x_2, \ldots, x_n$\} are $n$ random values of $x$.  Then, the total $T=x_1+x_2+\ldots+x_n$ has a variance of $\sigma_x^2+\sigma_x^2+\ldots+\sigma_x^2=n\sigma_x^2$.  By substituting \{$\frac{x_1}{n}, \frac{x_2}{n}, \ldots, \frac{x_n}{n}$\} into the formula for variance, we get
-\begin{equation}
-	\sigma_{\bar{x}}^2=\frac{1}{n^2}n\sigma^2
-\end{equation}
-Thus, by simplifying and taking the square root of both sides, we get
-\begin{equation}
-	\sigma_{\bar{x}}=\frac{\sigma}{\sqrt{n}}
-\end{equation}
-which is the formula for the standard error.
-
-\section*{Derivation of the Propagation of Error Formula}
-Suppose that \{$x_1, x_2, \ldots, x_n$\} are $n$ independent measured variables with errors of \{$\delta x_1, \delta x_2, \ldots, \delta x_n$\}.  Then, by the Chain rule for partial derivatives, the standard error of the function $p$ is defined as
-\begin{equation*}
-	\delta p = (\frac{\partial p}{\partial x_i}\delta x_i)
-\end{equation*}
-By the formula for the standard deviation of the sum of variables, the standard error of the function $p$ is
-\begin{equation*}
-	\delta q=\sqrt{(\frac{\partial q}{\partial x_1}\delta x_1)^2+(\frac{\partial q}{\partial x_2}\delta x_2)^2+\ldots+(\frac{\partial q}{\partial x_n}\delta x_n)^2}
-\end{equation*}
+For the second part of the lab, we improved the measurements with the largest errors by taking multiple trials and finding the average values from them.  Then, we calculated the standard error for each of these measurements.  For each of these unstable measurements, the standard deviation of the mean is considered to be the appropriate error as we performed many trials.  For the measurements that were stable and did not have any significant variation from trial to trial, we used the least count of the instrument used.  Finally, to find the uncertainty for our modulus of elasticity, we found the exact error by using Eq.(3) and Eq.(6).  We also compared our modulus of elasticity to known values for different common types of steel. 
+\section*{Results and Discussion}
 \end{document}
