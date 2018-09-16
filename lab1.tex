@@ -12,16 +12,16 @@ September 11, 2018
 \begin{center}
 	{\large \bf Lab 1: Propagation of Error}
 \end{center}
-\section*{Introduction}
-When we perform scientific experiments, we often have to take multiple measurements of a certain quantity.  In this case, we need to be able to calculate the error of the average of these measurements so that we can treat it as a single measurement with a higher level of accuracy.  To do this, we calculate the standard error of our measurement, which is equal to the standard deviation (found using Eq.(1)) divided by the square root of the number of trials performed, as shown in Eq.(2).  
+\section*{Introduction:}
+When we perform scientific experiments, we often have to take multiple measurements of a certain quantity.  In this case, we need to be able to calculate the error of the average of these measurements so that we can treat it as a single measurement with a higher level of accuracy.  To find the error of the average, we calculate the standard error, which is equal to the standard deviation (found using Eq.(1)) divided by the square root of the number of trials performed, as shown in Eq.(2).  
 \begin{equation}
-	\sigma_x=\sqrt{\frac{1}{N-1}\sum_{i=1}^{N} (x_i-\bar{x})^2}
+	\sigma=\sqrt{\frac{1}{N-1}\sum_{i=1}^{N} (x_i-\bar{x})^2}
 \end{equation}
 \begin{equation}
 	\sigma_{\bar{x}}=\frac{\sigma}{\sqrt{n}}
 \end{equation}\\
 
-Additionally, in scientific experiments, we often have to determine how the errors for each measurement influence our final results.  To do this, it is necessary to use the propagation of error formula.  Suppose that \{$x_1, x_2, \ldots, x_n$\} is a set of $n$ measurements, with errors of \{$\delta x_1, \delta x_2, \ldots, \delta x_n$\}, and we want to find the error in the value of a variable $q$, which is a function of \{$x_1, x_2, \ldots, x_n$\}.  Then, the error contributed to $q$ from \{$x_1, x_2, \ldots, x_n$\} is found exactly by Eq.(3) and quickly estimated by Eq.(4).  The error contributed to $q$ by a single measured quantiy $a$ is found using Eq.(5). 
+Additionally, we often have to determine how the errors for each measurement influence our final results.  To do this, it is necessary to use the propagation of error formula.  Suppose that \{$x_1, x_2, \ldots, x_n$\} is a set of $n$ measurements, with errors of \{$\delta x_1, \delta x_2, \ldots, \delta x_n$\}, and we want to find the error in the value of a variable $q$, which is a function of \{$x_1, x_2, \ldots, x_n$\}.  Then, the error contributed to $q$ from \{$x_1, x_2, \ldots, x_n$\} is found exactly by Eq.(3) and quickly estimated by Eq.(4).  The error contributed to $q$ by a single measured quantiy $a$ is found using Eq.(5). 
 
 
 \begin{equation}
@@ -35,21 +35,23 @@ Additionally, in scientific experiments, we often have to determine how the erro
 	\delta q_a=|\frac{\partial q}{\partial a}\delta a|
 \end{equation}
 In this lab, we will be using a torsion pendulum to determine the modulus of rigidity for a steel wire.
-In this case, the equation for the modulus of rigidity, M, is given by Eq.(6):
+In this case, the equation for the modulus of rigidity, M, is given by Eq.(6)
 \begin{equation}
 	M=\frac{32\pi}{3}\frac{Lm(a^2+b^2)}{d^4T^2}
 \end{equation}
 where $L$ is the length of the wire, $m$ is the mass of the bar, $a$ is the length of the bar, $b$ is the width of the bar, $d$ is the diameter of the wire, and $T$ is the period of the torsion pendulum, all of which are measured.\\\\
-The main objective of this lab is to learn about errors in measurement and how they affect our final calculated values.
-\section*{Experimental Method}
-This lab consisted of the following apparatus.  A long, thin steel wire was hung from a standard lab stand.  The bottom of the wire was threaded through a small hole in the central vertical axis of a brass bar.  A screw was threaded through a larger hole parallel to the width of the bar and was used to hold the bottom end of the wire in place.\\
+The main objective of this lab is to learn about errors in measurement and how they affect our final calculated value.  Additionally, we will be calculating the propagation of error due to each measurement and taking multiple measurements where necessary to reduce our errors.  To do this, we determined the modulus of rigidity of a steel wire using a torsion pendulum.
+\section*{Experimental Method:}
+This lab consisted of the following apparatus.  A long, thin steel wire was hung from a standard lab stand.  The bottom of the wire was threaded through a small hole in the central vertical axis of a brass bar.  A screw was threaded through a larger hole parallel to the width of the bar to hold the bottom end of the wire in place.\\
 
 \noindent For our measurements, we used a micrometer to measure the width of the block and the diameter of the wire.  To measure the length of the wire, we used a meter ruler with markings every 1 mm.  Digital calipers were used to measure the length of the bar.  Additionally, to measure the mass of the bar, a standard scale was used.  Finally, to measure the period of the torsion pendulum, we used a stopwatch on a cell phone.\\
 
 \noindent For the first part of this lab, we determined the least count of each instrument to get a rough idea of the error of each of our measurements.  As it was very hard to get a very precise measurement of the width of the bar, we took three different measurements, determined the average and the standard error, and then estimated the propagation of error using Eq.(4) and Eq.(6).  By analyzing this result, we found that the largest errors were from our measurements of the diameter of the wire and the period of the torsion pendulum.\\
 
-\noindent For the second part of the lab, we improved the measurements with the largest errors by taking multiple trials and finding their average values nad standard errors.  For each of these measurements, the standard deviation of the mean, or standard error, is considered to be the appropriate error as we performed many trials.  For the measurements that were stable and did not have any significant variation from trial to trial, we used the least count of the instrument as our error.  Finally, to find the uncertainty for our modulus of rigidity, we found the exact error by using Eq.(3) and Eq.(6).  We also compared our modulus of rigidity to known values for different common types of steel. 
-\section*{First Part Results}
+\noindent For the second part of the lab, we improved the measurements with the largest errors by taking multiple trials and finding their average values nad standard errors.  For each of these measurements, the standard deviation of the mean, or standard error, is considered to be the appropriate error as we performed many trials.  For the measurements that were stable and did not have any significant variation from trial to trial, we used the least count of the instrument as our error.\\
+
+\noindent Finally, to find the modulus of rigidity, we used Eq.(6) to find the average value and Eq. (3) and Eq. (6) to find the error.  
+\section*{First Part Results:}
 In the first part of this lab, we took one measurement of each quantity and determined the least count and stability of each measurement.  Table 1.1 shows our measurements for the least count and stability of our initial measurements.\\\\
 \textbf{Table 1.1}\\\\
 \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -128,7 +130,7 @@ Error due to Measurement (Pa)& $6\times10^6$ & $9\times10^8$ & $5\times10^9$\\
 Using Eq. (4), we obtained a total error of $7 \times 10^9$ Pa, or 7 GPa.\\
 In comparison, our estimated value for the modulus of rigidity, M, was 106 GPa, or $1.06\times10^{11}$ Pa.\\\\
 Based on the analysis of these errors, the most important quantities to be measured again multiple times were the diameter of the wire and the period of the torsion pendulum.  The period, T, was especially important to measure multiple times because our measurements may have been influenced by our reaction times as well as other variables relating to each trial such as air resistance.
-\section*{Second Part Results}
+\section*{Second Part Results:}
 Upon determining the quantities to re-measure, we took 24 different measurements for the period, T, and 6 measurements at different points of the wire for the diameter, d.  All other quantities measured appeared to be stable, so we used our values from the first part of the lab.  The average value  and associated error of each measured quantity is shown in Table 2.1.\\\\
 \textbf{Table 2.1}\\\\
 \begin{tabular}{c|c}
@@ -144,12 +146,13 @@ Upon determining the quantities to re-measure, we took 24 different measurements
 \begin{flushleft}
 \textit{\small Table 2.1: Final values for the average value and error of each measured quantity.  For l, m, and a, due to stable measurements, the error is the least count of the instrument used.  For all other values, the error was calculated using Eq. (2).}
 \end{flushleft}
-\section*{Analysis}
-Using Eq. (3) and Eq. (6), we obtained a value for M of $(9.4\pm0.2)\times10^{10}$ Pa, which is $94\pm2$ GPa.  This is about a 2-percent error, well within our target of 5 percent.  As a comparison, the handbook value for the modulus of rigidity for steel is generally about 80 GPa, but it varies from 70 to 100 GPa.  Thus, our measurements for M are well within the possible range of values.
-\section*{Conclusions}
-In conclusion, this lab helped us learn about errors in measured quantities and the propagation of error.  Although the most commonly stated modulus of rigidity of steel is 80 GPa, which is about 7 standard errors lesss than our experimental value, there is significant variation in different types of steel. Additionally, there were also many other possible sources of error in our lab.  For example, there was a hole in the bar that housed a screw made of a different metal.  This could have significantly altered the bar's moment of inertia, which would have made Eq. (6) slightly inaccurate.  Also, the brass bar wobbled slightly as it was spinning, and the wire was of varying thickness, which could have also made Eq. (6) inaccurate.  However, despite these errors, we still got a fairly accurate value for the modulus of rigidity of our steel wire.
+\section*{Analysis:}
+Using Eq. (3) and Eq. (6), we obtained a value for M of $(9.4\pm0.2)\times10^{10}$ Pa, which is $94\pm2$ GPa.  This is about a 2-percent error, well within our target of 5 percent.  As a comparison, the handbook value for the modulus of rigidity for steel is generally about 80 GPa, but it varies from 70 to 100 GPa.  Thus, our measurements for M are well within the possible range of accepted values.
+\section*{Conclusions:}
+In conclusion, this lab helped us learn about errors in measured quantities and the propagation of error.  Although the most commonly stated modulus of rigidity of steel is 80 GPa, which is about 7 standard errors lesss than our experimental value, there is significant variation in different types of steel.\\\\
+ Additionally, there were also many other possible sources of error in our lab.  For example, there was a hole in the bar that housed a screw made of a different metal.  This could have significantly altered the bar's moment of inertia, which would have made Eq. (6) slightly inaccurate.  Also, the brass bar wobbled slightly as it was spinning, and the wire was of varying thickness, which could have also made Eq. (6) inaccurate.  However, despite these errors, we still got a fairly accurate value for the modulus of rigidity of our steel wire.
 \newpage
-\section*{Appendix A: Raw Data for Part 1}
+\section*{Appendix A: Raw Data for Part 1:}
 \noindent
 \textbf{Table A.1}\\\\
 \includegraphics[width=\linewidth]{lab1dataa-crop}\\\\
@@ -160,7 +163,7 @@ In conclusion, this lab helped us learn about errors in measured quantities and 
 \includegraphics[width=\linewidth]{lab1dataaf2-crop}\\\\
 \textit{\small Table A.2: Excel spreadsheet with formulas from part 1.}
 \newpage
-\section*{Appendix B: Raw Data for Part 2}
+\section*{Appendix B: Raw Data for Part 2:}
 \noindent
 \textbf{Table B.1}\\\\
 \includegraphics[width=\linewidth]{lab1datab-crop}\\\\
